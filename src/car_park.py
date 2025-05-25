@@ -1,3 +1,6 @@
+from sensor import Sensor
+from display import Display
+
 class CarPark:
     def __init__(self, location = "Unknown", capacity = "Unknown",
                  plates = None, sensors = None, displays = None):
@@ -10,3 +13,19 @@ class CarPark:
     def __str__(self):      # Print Car_park object
         return f"Car Park at {self.location} , with {self.capacity} bays."
 
+    def register(self, component)  :  # Allow the car park to register sensors and displays (component will be either)
+        if isinstance(component, Sensor):
+            self.sensors.append(component)
+        elif isinstance(component, Display):
+            self.displays.append(component)
+        else:
+            raise TypeError("Object must be a Sensor or Display")
+
+    def add_car(self) : # When a car enters the car park - record the plate number and update the displays.
+        pass
+
+    def remove_car(self) : # When car exits the car park - remove the plate number and update the displays.
+        pass
+
+    def update_displays(self) : # When car park needs to update the displays.
+        pass
