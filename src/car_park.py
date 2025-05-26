@@ -35,4 +35,6 @@ class CarPark:
         self.update_displays()
 
     def update_displays(self) : # When car park needs to update the displays.
-        pass
+        data = {"available_bays": self.available_bays, "temperature": 25}
+        for display in self.displays:
+            display.update(data)
