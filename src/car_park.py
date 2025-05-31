@@ -18,14 +18,15 @@ class CarPark:
 
     def __str__(self):      # Print Car_park object
         return (f"Car Park at {self.location}, with total "
-                f"{self.capacity} bays, {len(self.sensors)} Sensor(s) "
-                f"and {len(self.displays)} Display(s)")
+                f"{self.capacity} bays, {len(self.sensors)} active Sensor(s) "
+                f"and {len(self.displays)} active Display(s)")
 
     def register(self, component)  :  #fix    Allow the car park to register sensors and displays (component will be either)
         if isinstance(component, Sensor):
             self.sensors.append(component)
         elif isinstance(component, Display):
-            self.displays.append(component)
+            if component.is_on : self.displays.append(component)
+#            self.displays.append(component)
         else:
             raise TypeError("Object must be a Sensor or Display")
 

@@ -20,10 +20,14 @@ entry_sensor = EntrySensor(1, car_park, True)
 exit_sensor = ExitSensor(2, car_park, True)
 
 display_one = Display("1",car_park,"Welcome to Moondalup",True)
+display_two = Display("2",car_park,"Welcome to Moondalup",True)
+display_three = Display("3",car_park,"Welcome to Moondalup",False)
 
 car_park.register(entry_sensor)
 car_park.register(exit_sensor)
 car_park.register(display_one)
+car_park.register(display_two)
+car_park.register(display_three)
 
 print(f"\n{car_park}")
 
