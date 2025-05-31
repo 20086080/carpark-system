@@ -26,7 +26,10 @@ class Sensor(ABC):
 class EntrySensor(Sensor):
     def update_car_park(self, plate):
         print(f"\n\nIncoming 🚘 vehicle detected. Plate: {plate}")
-        self.car_park.add_car(plate)
+        if self.car_park.available_bays <= 0:
+            print("Sorry this Car Park is now full. Try another Car Park or wait.")
+        else :
+            self.car_park.add_car(plate)
 
     def _scan_plate(self):   # Scan car plate ie generate car plate number
         return 'FAKE-' + format(random.randint(0, 999), "03d")
