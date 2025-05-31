@@ -64,7 +64,7 @@ This guide provides detailed step-by-step instructions for completing the projec
 
 **Additional evidencing:**
 Include a screenshot of your GitHub repository **after** you have pushed your initial commit.
-
+![](.\images\proj1.png)
 ```markdown
 ![Initial commit](images/mu_image.png)
 ```
@@ -74,8 +74,8 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
 | Class Name | Attributes | Methods |
-| ---------- | ---------- | ------- |
-| `CarPark`    |            |         |
+| ---------- |------------| ------- |
+| `CarPark`    | capacity,  |         |
 | `Sensor`     |            |         |
 | `Display`    |            |         |
 
@@ -104,7 +104,8 @@ Ensure you have completed the previous table and include at least two methods an
 
 **Additional evidencing:**
 Include a screenshot of your GitHub repository `src/` directory **after** you have pushed your changes.
-
+![](.\images\proj2.png)
+![](.\images\proj3.png)
 ```markdown
 ![Added stubs for classes](images/stubs-for-classes.png)
 ```
@@ -206,7 +207,7 @@ You realize that you need a way to configure the car park system. You decide to 
 --------
 **Additional evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
-
+![](.\images\proj4.png
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
 s1
@@ -444,7 +445,7 @@ This time, we will push the tag to the remote repository:
    ```
 
 Add a screenshot of the GitHub repository after pushing the tag, showing the CarPark class with the new methods:
-
+![](.\images\proj5.png)
 ```markdown
 ![Added methods to the car park class](images/methods-to-car-park.png)
 ```

@@ -1,14 +1,15 @@
 from sensor import Sensor
 from display import Display
+from datetime import datetime
 
 class CarPark:
     def __init__(self, location = "Unknown", capacity = 0,
                  plates = None, sensors = None, displays = None):
         self.location = location
         self.capacity = capacity
-        self.plates = plates or []      # empty list if value is None
-        self.sensors = sensors or []
-        self.displays = displays or []
+        self.plates = plates or []      # Car plates in the carpark
+        self.sensors = sensors or []    # List of sensors in the carpark
+        self.displays = displays or []  # List of displays in the carpark
 
     @property
     def available_bays(self):
@@ -18,7 +19,7 @@ class CarPark:
     def __str__(self):      # Print Car_park object
         return f"Car Park at {self.location} , with {self.capacity} bays."
 
-    def register(self, component)  :  # Allow the car park to register sensors and displays (component will be either)
+    def register(self, component)  :  #fix    Allow the car park to register sensors and displays (component will be either)
         if isinstance(component, Sensor):
             self.sensors.append(component)
         elif isinstance(component, Display):
@@ -35,6 +36,7 @@ class CarPark:
         self.update_displays()
 
     def update_displays(self) : # When car park needs to update the displays.
-        data = {"available_bays": self.available_bays, "temperature": 25}
+        data = {"available_bays": self.available_bays, "temperature": 25,
+                "date": datetime.now().date(),"time": datetime.now().time()}
         for display in self.displays:
             display.update(data)

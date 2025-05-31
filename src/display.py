@@ -8,6 +8,6 @@ class Display:
     def __str__(self):      # Print display object
         return f"Display {self.id} : Welcome to car park {self.car_park}."
 
-    def update(self, data):           #fix
+    def update(self, data):           #
         for key, value in data.items():
-            print(f"{key}: {value}")
+            print(f"{key}: {value}", end = " ")
