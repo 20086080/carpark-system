@@ -25,14 +25,16 @@ car_park.register(entry_sensor)
 car_park.register(exit_sensor)
 car_park.register(display_one)
 
+print(f"\n{car_park}")
+
+# If the above 3 are commented then the display does not come - why
+
 #print(car_park.sensors[0], "\n", car_park.sensors[1], "\n",car_park.displays[0])
 #print(car_park.sensors[0].is_active)
 #print(dir(car_park.sensors[0]))
 
 for itr in range(10):
     entry_sensor.detect_vehicle()
-print("\n",car_park.plates)
 
 for itr in range(2):
     exit_sensor.detect_vehicle()
-print("\n", car_park.plates)

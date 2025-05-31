@@ -17,7 +17,9 @@ class CarPark:
             if len(self.plates) <  self.capacity else 0         # Check car_park not full
 
     def __str__(self):      # Print Car_park object
-        return f"Car Park at {self.location} , with {self.capacity} bays."
+        return (f"Car Park at {self.location}, with total "
+                f"{self.capacity} bays, {len(self.sensors)} Sensor(s) "
+                f"and {len(self.displays)} Display(s)")
 
     def register(self, component)  :  #fix    Allow the car park to register sensors and displays (component will be either)
         if isinstance(component, Sensor):
@@ -36,7 +38,8 @@ class CarPark:
         self.update_displays()
 
     def update_displays(self) : # When car park needs to update the displays.
-        data = {"available_bays": self.available_bays, "temperature": 25,
-                "date": datetime.now().date(),"time": datetime.now().time()}
+        data = {"Available bays": self.available_bays, "Temperature": 25,
+                "Date": datetime.now().date(),"Time": datetime.now().time()}
         for display in self.displays:
+            print(f"\n{display}")
             display.update(data)
