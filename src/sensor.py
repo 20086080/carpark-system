@@ -40,4 +40,7 @@ class ExitSensor(Sensor):
         self.car_park.remove_car(plate)
 
     def _scan_plate(self):   # Scan car plate ie generate car plate number from existing plates
+        if len(self.car_park.plates) == 0 :
+            print("There are no cars in this car park")
+            return 0
         return random.choice(self.car_park.plates)
