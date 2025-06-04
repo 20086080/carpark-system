@@ -2,6 +2,7 @@ from sensor import Sensor
 from display import Display
 from datetime import datetime
 
+
 class CarPark:
     def __init__(self, location = "Unknown", capacity = 0,
                  plates = None, sensors = None, displays = None):
@@ -43,3 +44,4 @@ class CarPark:
         for display in self.displays:
             print(f"\n{display}")
             display.update(data)
+

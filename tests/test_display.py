@@ -21,3 +21,6 @@ class TestDisplay(unittest.TestCase):
         self.display.update({"message": "Goodbye"})
         self.assertNotEqual(self.display.message, "Goodbye")
         self.assertEqual(self.display.message, "Welcome to the car park")
+
+if __name__ == "__main__":
+   unittest.main()

@@ -14,7 +14,7 @@ car_park = CarPark("moondalup",100,None,[],[])
 entry_sensor = EntrySensor(1, car_park, True)
 exit_sensor = ExitSensor(2, car_park, True)
 entry_sensor1 = EntrySensor(3, car_park, True)
-exit_sensor1 = ExitSensor(2, car_park, False)
+exit_sensor1 = ExitSensor(4, car_park, False)
 
 display_one = Display("1",car_park,"Welcome to Moondalup",True)
 display_two = Display("2",car_park,"Welcome to Moondalup",True)
@@ -29,12 +29,6 @@ car_park.register(display_two)
 car_park.register(display_three)
 
 print(f"\n{car_park}")
-
-# If the above 3 are commented then the display does not come - why
-
-#print(car_park.sensors[0], "\n", car_park.sensors[1], "\n",car_park.displays[0])
-#print(car_park.sensors[0].is_active)
-#print(dir(car_park.sensors[0]))
 
 for itr in range(10):
     entry_sensor.detect_vehicle()
