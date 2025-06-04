@@ -5,10 +5,9 @@ from sensor import Sensor, EntrySensor, ExitSensor
 
 class TestSensor(unittest.TestCase):
     def setUp(self):
-        self.entry_sensor = EntrySensor(1, CarPark("123 Example Street",
-                                             100),True)
-        self.exit_sensor = ExitSensor(2, CarPark("123 Example Street",
-                                             100),True)
+        self.car_park = CarPark("123 Example Street", 100)
+        self.entry_sensor = EntrySensor(1, self.car_park,True)
+        self.exit_sensor = ExitSensor(2, self.car_park,True)
 
     def test_entry_sensor_initialized_with_all_attributes(self):
         self.assertEqual(self.entry_sensor.car_park.capacity, 100)
@@ -21,12 +20,12 @@ class TestSensor(unittest.TestCase):
 
     def test_entry_sensor_detect_vehicle_scan_plate(self):
         self.entry_sensor.detect_vehicle()
-        assert "FAKE" in self.entry_sensor._scan_plate()
+        self.assertIn("FAKE", self.entry_sensor._scan_plate())
 
         # Checking message if no availability in Car Park
         self.entry_sensor.car_park.capacity = 0
         self.entry_sensor.detect_vehicle()
-        assert "FAKE" in self.entry_sensor._scan_plate()
+        self.assertIn("FAKE", self.entry_sensor._scan_plate())
 
     def test_exit_sensor_car_park_attributes(self):
         self.assertEqual(self.exit_sensor.car_park.capacity, 100)
@@ -43,4 +42,4 @@ class TestSensor(unittest.TestCase):
         # Checking for Car Park with cars
         self.exit_sensor.car_park.plates = ["FAKE-101","FAKE-102","FAKE-103"]
         self.exit_sensor.detect_vehicle()
-        assert self.exit_sensor._scan_plate() in self.exit_sensor.car_park.plates
+        self.assertIn(self.exit_sensor._scan_plate(), self.exit_sensor.car_park.plates)
