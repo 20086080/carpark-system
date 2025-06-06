@@ -73,11 +73,11 @@ Include a screenshot of your GitHub repository **after** you have pushed your in
 
 After reading the task requirements, you should be able to identify the classes, methods, and attributes required for the car park system. Complete the following table with the classes, methods, and attributes you must implement.
 
-| Class Name | Attributes | Methods |
-| ---------- |------------| ------- |
-| `CarPark`    | capacity,  |         |
-| `Sensor`     |            |         |
-| `Display`    |            |         |
+| Class Name | Attributes           | Methods                              |
+| ---------- |----------------------|--------------------------------------|
+| `CarPark`    | capacity,location    | add_car, remove_car, update_displays |
+| `Sensor`     | Carpark, ID          | EntrySensor, ExitSensor              |
+| `Display`    | Carpark, ID, Message | Update_display                       |
 
 **Additional evidencing:**
 Ensure you have completed the previous table and include at least two methods and attributes for each.
@@ -207,13 +207,13 @@ You realize that you need a way to configure the car park system. You decide to 
 --------
 **Additional evidencing:**
 Ensure that you have completed the previous steps and created the appropriate tags. Confirm that the tags have been created by running `git tag` in the terminal and provide a screenshot of the output.
-![](.\images\proj4.png
+
 ```bash
 [student@workstation ipriot-car-park-prj]$ git tag
 s1
 s2
 ```
-
+![](.\images\proj4.png)
 ### Relate the classes
 
 Let's consider how the classes relate to each other. We can start by using a sequence diagram to illustrate class interactions. A sequence diagram shows the interactions between objects in a sequential order. The following diagram shows the interactions between the `CarPark`, `Sensor`, and `Display` classes.
@@ -371,10 +371,13 @@ You may want to see the number of available bays, the current temperature, and t
 Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which class is responsible for each piece of information? There's no right or wrong answer here. But you should be able to justify your answer.
 
 >Q. Which class is responsible for the number of available bays (and why)?
->
+> CarPark because the number of available bays is a characteristic of the total Car Park and not limited to a specific sensor or display.  
+> 
 >Q. Which class is responsible for the current temperature (and why)?
->
+>CarPark because temperature is a characteristic of the total Car Park and not limited to a specific sensor or display. 
+> 
 >Q. Which class is responsible for the time (and why)?
+> CarPark because we would like the same time to be across all displays in the Car Park and hence is managed via the CarPark class. 
 >
 --------
 
@@ -455,17 +458,18 @@ Answer the following questions:
 >
 > 1. **Which class is responsible for each of the following pieces of information (and why)?**
 >    - _The number of available bays_
->      `Answer here...`
+>      `CarPark because the number of available bays is a characteristic of the total Car Park and not limited to a specific sensor or display. `
 >    - _The current temperature_
->      `Answer here...`
+>      `CarPark because temperature is a characteristic of the total Car Park and not limited to a specific sensor or display. 
+`
 >    - _The time_
->      `Answer here...`
+>      `CarPark because we would like the same time to be across all displays in the Car Park and hence is managed via the CarPark class.`
 >
 > 2. **What is the difference between an attribute and a property?**
->    `Answer here...`
+>    `Attributes are usually static and provide initial required information. Property are dynamic and allow for defining custom behaviour. Property provides a layer of abstraction. `
 >
 > 3. **Why do you think we used a dictionary to hold the data we passed the display? List at least one advantage and one disadvantage of this approach.**
->    `Answer here...`
+>    `Data is stored in Key Value pairs allowing for specific items to be retrieved as required. The dictionary allows for adding additional information or removing information at a later stage with the help of the key.`
 
 #### Add a detect vehicle method to the Sensor class
 
@@ -709,7 +713,7 @@ if __name__ == "__main__":
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
    ```markdown
-   ![Unit tests](images/unit-tests.png)![]()!)
+   ![Unit tests]
    ```
 ![](.\images\unit-tests.png)
 2. Commit your changes to the local repository. Tag the commit with `s6` so your lecturer can find it:
@@ -768,7 +772,7 @@ Next, we'll create tests for the `Display` class. These tests will test the `__i
 1. Add a screenshot of the output of the unit tests. If any failed, add a screenshot of the error message and a screenshot after you have fixed the errors:
 
    ```markdown
-   ![Unit tests](images/unit-tests-display.png)
+   ![Unit tests]
    ```
 ![](.\images\unit-tests-display.png)
 ![](.\images\unit-tests-display1.png)
