@@ -966,7 +966,7 @@ Let's now implement the functionality to make the unit tests pass (if you have w
 1. Add and commit your changes to the branch
 2. Now we are going to merge the branch back into the main branch. First, switch to the main branch:
 
-   ```bash
+   ```bash[test_sensor.py](tests/test_sensor.py)
    git switch main
    ```
 

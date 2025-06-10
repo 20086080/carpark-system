@@ -33,12 +33,12 @@ class CarPark:
         else:
             raise TypeError("Object must be a Sensor or Display")
 
-    def add_car(self, plate) : # When a car enters the car park - record the plate number and update the displays.
+    def add_car(self, plate) : # When a car enters the car park - record the plate | update the displays.
         self.plates.append(plate)
         self.update_displays()
         self._log_car_activity(plate, "entered")
 
-    def remove_car(self, plate) : # When car exits the car park - remove the plate number and update the displays.
+    def remove_car(self, plate) : # When car exits the car park - remove the plate | update the displays.
         self.plates.remove(plate)
         self.update_displays()
         self._log_car_activity(plate, "removed")
