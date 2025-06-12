@@ -11,7 +11,7 @@ car_park = CarPark("moondalup",
                    "moondalup.txt",
                    "moondalup_config.json")
 
-car_park.write_config()
+car_park.write_config() # Write car park configuration to json
 car_park = car_park.from_config(car_park.config_file)  # Re-create car park from json file
 
 # Create Sensors and Display
