@@ -374,10 +374,10 @@ Now consider, between the `CarPark`, `Sensor`, and `Display` classes, which clas
 > CarPark because the number of available bays is a characteristic of the total Car Park and not limited to a specific sensor or display.  
 > 
 >Q. Which class is responsible for the current temperature (and why)?
->CarPark because temperature is a characteristic of the total Car Park and not limited to a specific sensor or display. 
+>CarPark because temperature is updated on the display by the car park each time a car enters or exits the car park. 
 > 
 >Q. Which class is responsible for the time (and why)?
-> CarPark because we would like the same time to be across all displays in the Car Park and hence is managed via the CarPark class. 
+>CarPark because time is updated on the display by the car park each time a car enters or exits the car park.  
 >
 --------
 
