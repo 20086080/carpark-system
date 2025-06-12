@@ -1046,7 +1046,9 @@ After you have merged your branch to main, push to your remote with the s10 tag.
 
 ```markdown
 ![Added methods to the car park class](images/methods-to-car-park.png)
+
 ```
+![](.\images\proj6.png)
 
 ### Final step: build a car park!
 
@@ -1084,7 +1086,8 @@ In your final submission, you must include any files you created or modified. Th
    ```markdown
    ![Main.py output](images/main-py.png)
    ```
-
+![](.\images\Main.py Output.png)
+![](.\images\Main.py Output1.png)
 2. Commit your changes to the local repository. Tag the commit with `v1`, so your lecturer can find it. Ensure the commit includes the log and config files (though you would typically ignore them).
 3. Push the tag to the remote repository.
 
