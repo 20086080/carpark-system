@@ -1,3 +1,10 @@
+"""
+This is the car park systems main file which can be called to run the entire car park system.
+main.py creates a car park from a configuration json file, creates sensors and displays
+which are added to the car park via the register method.
+As an initial release main.py then goes on to add 10 cars into the car park
+and remove 2 cars from the car park.
+"""
 from car_park import CarPark
 from sensor import EntrySensor, ExitSensor
 from display import Display
