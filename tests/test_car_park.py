@@ -55,7 +55,7 @@ class TestCarPark(unittest.TestCase):
                self.car_park.register("Not a Sensor or Display")
 
       def test_log_file_created(self):
-         new_carpark = CarPark("123 Example Street", 100, log_file="new_log.txt")
+         self.new_carpark = CarPark("123 Example Street", 100, log_file="new_log.txt")
          self.assertTrue(Path("new_log.txt").exists())
 
       def tearDown(self):
