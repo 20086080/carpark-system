@@ -11,27 +11,25 @@ from display import Display
 # TODO: drive 10 cars into the car park (must be triggered via the sensor - NOT by calling car_park.add_car directly)
 # TODO: drive 2 cars out of the car park (must be triggered via the sensor - NOT by calling car_park.remove_car directly)
 
-#newcar_park = CarPark("moondalup",
-#                   100,
-#                   None,
-#                   [],
-#                   [],
-#                   "moondalup.txt",
-#                   "moondalup_config.json")
+car_park = CarPark("moondalup",
+                   100,
+                   None,
+                   [],
+                   [],
+                   "moondalup.txt",
+                   "moondalup_config.json")
 
-#newcar_park.write_config()
-#car_park = newcar_park.from_config(newcar_park.config_file)
+car_park.write_config()
+car_park = car_park.from_config(car_park.config_file)
 
-car_park = CarPark("moondalup",100,None,[],[],"","")
 
 entry_sensor = EntrySensor(1, car_park, True)
 exit_sensor = ExitSensor(2, car_park, True)
-
 display_one = Display("1",car_park,"Welcome to Moondalup",True)
-
 car_park.register(entry_sensor)
 car_park.register(exit_sensor)
 car_park.register(display_one)
+
 
 print(f"\n{car_park}")
 

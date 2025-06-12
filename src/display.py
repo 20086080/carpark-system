@@ -1,8 +1,5 @@
-from car_park import CarPark
-
-
 class Display:
-    def __init__(self, id : str, car_park : CarPark, message = "", is_on = False):
+    def __init__(self, id : str, car_park, message = "", is_on = False):
         self.id = id
         self.message = message
         self.is_on = is_on
